@@ -1,0 +1,64 @@
+//  =================================================================================================
+//
+//  Base: Base element style overrides
+//
+//  ==================================================================================================
+
+
+// ------------------------------------------------
+// Global Box-Sizing
+// ------------------------------------------------
+
+html {
+  color: $default-txt-color;
+  @include box-sizing(border-box);
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+// ------------------------------------------------
+// Base
+// ------------------------------------------------
+
+body{
+  background: $body-bg;
+  height: 100%;
+  min-height:100%;
+}
+
+header, section, footer, nav, aside{
+  display: block;
+  margin: auto;
+}
+
+// ------------------------------------------------
+// Additional resets
+// ------------------------------------------------
+
+::-moz-selection ,
+::selection{
+  background: $highlight;
+  text-shadow: none;
+}
+
+a, div, span, p, em, strong {
+  outline: none !important;
+  -moz-outline: none !important;
+}
+
+img{
+  display: block;
+  height: auto;
+  vertical-align: middle;
+  width: 100%;
+}
+
+textarea,
+select,
+input,
+button{
+  text-rendering: optimizelegibility;
+  @include font-smoothing(antialiased);
+}

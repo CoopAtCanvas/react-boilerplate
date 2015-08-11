@@ -1,0 +1,142 @@
+// ==========================================================================
+//
+// Typography
+//
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+// Global
+// --------------------------------------------------------------------------
+
+html {
+  font-size: $font-size-root;
+}
+
+body {
+  color: $default-txt-color;
+  font: $font-size-base/#{$line-height-base} $font-family-default;
+  font-weight: $font-weight-default;
+  text-rendering: optimizelegibility;
+  @include font-smoothing(antialiased);
+}
+
+// --------------------------------------------------------------------------
+// Body text elements
+// --------------------------------------------------------------------------
+
+p {
+  margin: 0 0 $line-height-computed; }
+
+blockquote{
+  border-left: 2px solid $blockquote-txt-color;
+  color: $blockquote-txt-color;
+  display: block;
+  font-family: $blockquote-font-family;
+  font-size:   $blockquote-txt-size;
+  margin: 0;
+  padding-left: $padding-default;
+}
+
+// --------------------------------------------------------------------------
+// Text Mods
+// --------------------------------------------------------------------------
+
+b,
+strong,
+.bold {
+  font-family: $font-family-heading;
+  font-weight: normal;
+}
+
+// --------------------------------------------------------------------------
+// Headdings
+// --------------------------------------------------------------------------
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6, {
+  color:         $headings-font-color;
+  font-family:   $font-family-heading;
+  font-weight:   $heading-font-weight;
+  line-height:   $headings-line-height;
+  margin-bottom: $line-height-computed;
+  margin-top:    $line-height-computed * 2;
+}
+
+h1, .h1, { font-size: $font-size-alpha   }
+h2, .h2, { font-size: $font-size-beta    }
+h3, .h3, { font-size: $font-size-gamma   }
+h4, .h4, { font-size: $font-size-delta   }
+h5, .h5, { font-size: $font-size-epsilon }
+h6, .h6, { font-size: $font-size-zeta    }
+
+// --------------------------------------------------------------------------
+// Links
+// --------------------------------------------------------------------------
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover{
+    color: lighten($link-color, 20%);
+  }
+
+  &:focus,
+  &:active{
+    color: darken($link-color, 20%);
+  }
+}
+
+// --------------------------------------------------------------------------
+// Dividers
+// --------------------------------------------------------------------------
+
+hr {
+  background: $gray;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: $line-height-computed 0;
+}
+
+// --------------------------------------------------------------------------
+// Lists
+// --------------------------------------------------------------------------
+
+nav {
+  ol,
+  ul{
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: $line-height-computed;
+
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Forms
+// --------------------------------------------------------------------------
+
+::-webkit-input-placeholder { color: $placeholder-txt-color; }
+::-moz-placeholder          { color: $placeholder-txt-color; }
+:-ms-input-placeholder      { color: $placeholder-txt-color; }
+:-ms-input-placeholder      { color: $placeholder-txt-color; }

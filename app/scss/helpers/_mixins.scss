@@ -1,0 +1,129 @@
+// ==========================================================================
+//
+// Mixins
+//
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+// Fonts
+// --------------------------------------------------------------------------
+
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url(font-path('#{$font-filename}.eot'));
+    src: url(font-path('#{$font-filename}.eot?#iefix')) format('embedded-opentype'),
+    url(font-path('#{$font-filename}.woff')) format('woff'),
+    url(font-path('#{$font-filename}.ttf')) format('truetype'),
+    url(font-path('#{$font-filename}.svg##{$font-family}')) format('svg');
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+    font-weight: $font-weight;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Utils
+// --------------------------------------------------------------------------
+
+// Clearfix Mixin
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Center-align a block level element
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Sizing shortcuts
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+@mixin font-smoothing($option){
+  -webkit-font-smoothing: $option;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// --------------------------------------------------------------------------
+// Positioning
+// --------------------------------------------------------------------------
+
+@mixin center-all($top: 0, $right: 0, $bottom: 0, $left: 0){
+  bottom: $bottom;
+  left: $left;
+  margin: auto;
+  position: absolute;
+  right: $right;
+  top: $top;
+}
+
+@mixin center-vert($top: 0, $bottom: 0){
+  bottom: $bottom;
+  margin: auto;
+  position: absolute;
+  top: $top;
+}
+
+@mixin center-horz($right: 0, $left: 0){
+  left: $left;
+  margin: auto;
+  position: absolute;
+  right: $right;
+}
+
+// --------------------------------------------------------------------------
+// Buttons
+// --------------------------------------------------------------------------
+
+@mixin button($bg-color, $height, $color: $white, $padding: $padding-default, $width: auto ) {
+  background-color: $bg-color;
+  color: $color;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 $padding;
+  height: $height;
+  line-height: $height;
+  width: $width;
+
+  &:hover,
+  &:active,
+  &:focus  { color: $color; }
+
+  &:hover  { background-color: mix(white, $bg-color, 15%); }
+  &:focus,
+  &:active { background-color: mix(black, $bg-color, 15%); }
+}
+
+// --------------------------------------------------------------------------
+// Responsive Breakpoints
+// --------------------------------------------------------------------------
+
+$breakpoints: (
+  'xs': ( max-width: $break-sm - 1 ),
+  'sm': ( min-width: $break-sm ),
+  'md': ( min-width: $break-md ),
+  'lg': ( min-width: $break-lg ),
+  'xl': ( min-width: $break-xl )
+);
+
+@mixin breakpoint($name) {
+  @media #{inspect(map-get($breakpoints, $name))} {
+    @content;
+  }
+}

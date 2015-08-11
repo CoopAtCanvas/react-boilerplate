@@ -1,0 +1,82 @@
+//  ==========================================================================
+//  Variables
+//  ==========================================================================
+
+//  Grays
+//  --------------------------------------------------------------------------
+    $black:                   #000 !default;
+    $gray-darker:             #222 !default;
+    $gray-dark:               #333 !default;
+    $gray:                    #555 !default;
+    $gray-light:              #777 !default;
+    $gray-lighter:            #eee !default;
+    $white:                   #fff !default;
+
+//  Colors
+//  --------------------------------------------------------------------------
+    $blue:                    #59c4cb !default;
+
+//  Default Color Settings
+//  --------------------------------------------------------------------------
+    $body-bg:                 $gray-lighter      !default;
+    $default-txt-color:       $gray              !default;
+    $placeholder-txt-color:   $gray-light        !default;
+    $highlight:               $gray-light        !default;
+
+//  Font Stacks
+//  --------------------------------------------------------------------------
+    $font-family-default:     'Montserrat', Helvetica, Arial, sans-serif !default;
+    $font-family-heading:     'Montserrat', Helvetica, Arial, sans-serif !default;
+
+//  Type Sizes (5.0 = size 50px font)
+//  --------------------------------------------------------------------------
+    $font-size-root:          65%    !default;
+    $font-size-alpha:         7.0rem !default;
+    $font-size-beta:          5.0rem !default;
+    $font-size-gamma:         3.8rem !default;
+    $font-size-delta:         2.4rem !default;
+    $font-size-epsilon:       1.8rem !default;
+    $font-size-zeta:          1.5rem !default;
+    $font-size-base:          1.5rem !default;
+
+//  Defaults
+//  --------------------------------------------------------------------------
+    $font-weight-default:     400 !default;
+    $line-height-base:        1.5 !default;
+    $line-height-computed:    floor($font-size-base * $line-height-base) !default;
+
+//  Headings
+//  --------------------------------------------------------------------------
+    $headings-font-family:    $font-family-default !default;
+    $heading-font-weight:     700 !default;
+    $headings-line-height:    1 !default;
+    $headings-font-color:     $black !default;
+
+//  Blockquotes
+//  --------------------------------------------------------------------------
+    $blockquote-font-family:  $font-family-default !default;
+    $blockquote-txt-size:     $font-size-delta     !default;
+    $blockquote-txt-color:    $gray-light          !default;
+
+//  Links
+//  --------------------------------------------------------------------------
+    $link-color:              $blue !default;
+    $link-hover-color:        darken($link-color, 15%) !default;
+
+//  Forms
+//  --------------------------------------------------------------------------
+    $font-family-form:        $font-family-default !default;
+    $font-family-label:       $font-family-default !default;
+
+//  Responsive Breakpoints
+//  --------------------------------------------------------------------------
+    $break-xs:                320px  !default;
+    $break-sm:                580px  !default;
+    $break-md:                768px  !default;
+    $break-lg:                1024px !default;
+    $break-xl:                1240px !default;
+
+//  Spacing Defaults
+//  --------------------------------------------------------------------------
+    $padding-default:         40px !default;
+    $page-max-width:          1240px !default;

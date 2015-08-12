@@ -4,7 +4,7 @@ module.exports = {
   cache: true,
   debug: true,
   devtool: 'eval',
-  entry: './app/app.js',
+  entry: './app/App.js',
   output: {
     path: path.join(__dirname, "build"),
     filename: 'build.min.js'

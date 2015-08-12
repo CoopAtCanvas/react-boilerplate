@@ -9,12 +9,13 @@ var WebpackDevServer = require("webpack-dev-server");
 var webpackConfig    = require("../../webpack.config.js");
 
 gulp.task("webpack-dev-server", function(callback) {
-  var myConfig = Object.create(webpackConfig);
+  var myConfig     = Object.create(webpackConfig);
   myConfig.devtool = "eval";
-  myConfig.debug = true;
+  myConfig.debug   = true;
 
   new WebpackDevServer(webpack(myConfig), {
-    publicPath: "/" + myConfig.output.publicPath,
+    contentBase: "public",
+    publicPath: "public",
     stats: {
       colors: true
     }

@@ -1,10 +1,10 @@
 import React      from 'react';
-import HelloSayer from '../components/HelloSayer.js';
+import HelloSayer from './HelloSayer.js';
 
-var Feed = React.createClass({
+var Dashboard = React.createClass({
   getInitialState: function() {
     return {
-      name: 'feed'
+      name: 'dashboard'
     };
   },
 
@@ -22,4 +22,4 @@ var Feed = React.createClass({
   }
 });
 
-export default Feed;
+export default Dashboard;

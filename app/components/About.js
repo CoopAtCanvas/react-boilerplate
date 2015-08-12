@@ -1,5 +1,5 @@
 import React      from 'react';
-import HelloSayer from '../components/HelloSayer.js';
+import HelloSayer from './HelloSayer.js';
 
 var About = React.createClass({
   getInitialState: function() {

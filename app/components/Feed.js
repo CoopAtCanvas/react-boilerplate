@@ -1,25 +1,27 @@
 import React      from 'react';
 import HelloSayer from './HelloSayer.js';
 
-var Feed = React.createClass({
-  getInitialState: function() {
-    return {
+class Feed extends React.Component{
+  constructor(props){
+    super(props);
+    this.onChange = this.onChange.bind(this);
+    this.state = {
       name: 'feed'
     };
-  },
+  }
 
-  render: function() {
+  render() {
     return (<div className="hello-form">
       <input type="text" onChange={this.onChange} />
       <HelloSayer name={this.state.name} />
     </div>);
-  },
+  }
 
-  onChange: function(e) {
+  onChange(e) {
     this.setState({
       name: e.target.value
     });
   }
-});
+}
 
 export default Feed;

@@ -1,25 +1,27 @@
 import React      from 'react';
 import HelloSayer from './HelloSayer.js';
 
-var About = React.createClass({
-  getInitialState: function() {
-    return {
+class About extends React.Component{
+  constructor(props){
+    super(props);
+    this.onChange = this.onChange.bind(this);
+    this.state = {
       name: 'about'
     };
-  },
+  }
 
-  render: function() {
+  render() {
     return (<div className="hello-form">
       <input type="text" onChange={this.onChange} />
       <HelloSayer name={this.state.name} />
     </div>);
-  },
+  }
 
-  onChange: function(e) {
+  onChange(e) {
     this.setState({
       name: e.target.value
     });
   }
-});
+}
 
 export default About;

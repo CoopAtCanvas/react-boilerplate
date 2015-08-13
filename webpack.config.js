@@ -9,13 +9,16 @@ module.exports = {
     path: path.join(__dirname, "build"),
     filename: 'build.min.js'
   },
+  resolveLoader: {
+    modulesDirectories: ['node_modules']
+  },
   resolve: {
-    extensions: ['', '.js', '.json', '.coffee']
+    extensions: ['', '.js', '.json']
   },
   module: {
     loaders: [
-      { test: /\.js$/,   loaders: ['jsx', 'babel'], exclude: /node_modules/ },
-      { test: /\.scss$/, loader: "style-loader!raw-loader!sass-loader?includePaths[]=" + path.resolve(__dirname, "./node_modules/compass-mixins/lib") }
+      { test: /\.js$/,     loaders: ['jsx', 'babel'], exclude: /node_modules/ },
+      { test: /\.scss$/,   loader: "style-loader!raw-loader!sass-loader?includePaths[]=" + path.resolve(__dirname, "./node_modules/compass-mixins/lib") }
     ]
   }
 };

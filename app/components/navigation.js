@@ -5,8 +5,8 @@
 import React  from 'react';
 import {Link} from 'react-router';
 
-var Navigation = React.createClass({
-  render: function () {
+class Navigation extends React.Component{
+  render() {
     return (
       <nav>
         <ul>
@@ -17,6 +17,6 @@ var Navigation = React.createClass({
       </nav>
     );
   }
-});
+}
 
 export default Navigation;

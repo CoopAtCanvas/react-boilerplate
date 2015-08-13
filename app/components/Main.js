@@ -1,17 +1,23 @@
-// --------------------------------------------------
+// ======================================================================================================
+//
 // Main Layout
+//
+// ======================================================================================================
+
+// --------------------------------------------------
+// Import Modules
 // --------------------------------------------------
 
 import React            from 'react';
 import { RouteHandler } from 'react-router';
-import Navigation       from './navigation.js'
+import Navigation       from './Navigation.js';
 
 // --------------------------------------------------
 // Create Main Layout Component
 // --------------------------------------------------
 
-var Main = React.createClass({
-  render: function () {
+class Main extends React.Component{
+  render() {
     return (
       <div>
         <Navigation/>
@@ -19,6 +25,10 @@ var Main = React.createClass({
       </div>
     );
   }
-});
+}
+
+// --------------------------------------------------
+// Exports
+// --------------------------------------------------
 
 export default Main;
